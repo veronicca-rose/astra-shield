@@ -71,7 +71,7 @@ export default function Home() {
   async function analyze(id:string) {
     setLoading(true);
     try {
-      const r=await fetch(`http://127.0.0.1:8000/analyze/${id}`);
+      const r=await fetch(`/api/analyze/${id}`);
       if(!r.ok) throw new Error();
       const d=await r.json();
       setAnalysis(d.analysis); setApiOnline(true);
